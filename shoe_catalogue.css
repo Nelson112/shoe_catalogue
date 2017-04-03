@@ -64,6 +64,7 @@ table{
 th, td {
     text-align: left;
     padding: 8px;
+    text-transform: capitalize;
 }
 
 tr:nth-child(even){background-color: #f2f2f2}
