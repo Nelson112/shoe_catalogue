@@ -7,6 +7,7 @@ var sizeDdown = document.getElementById("sizeDdown")
   // the dropDown that has the shoe colors
 var colorDdown = document.getElementById("colorDdown")
 
+var addShoeStockBtn = document.getElementById("addShoeStockBtn")
 
 // here I have the data that is in my table in a array
 var shoes = [{
@@ -47,16 +48,14 @@ myBtn.addEventListener("click", function() {
 
   if (selectedColor === "All" && selectedSize === "All") {
     shoeStore = shoes;
-  }
-  else if (selectedColor === "All" && selectedSize !== "All"){
+  } else if (selectedColor === "All" && selectedSize !== "All") {
     for (var i = 0; i < shoes.length; i++) {
       var eachShoeObj = shoes[i]
       if (eachShoeObj.size === selectedSize) {
         shoeStore.push(eachShoeObj)
       };
     }
-  }
-  else if (selectedColor !== "All" && selectedSize === "All"){
+  } else if (selectedColor !== "All" && selectedSize === "All") {
     for (var i = 0; i < shoes.length; i++) {
       var eachShoeObj = shoes[i]
       if (eachShoeObj.color === selectedColor) {
@@ -64,8 +63,7 @@ myBtn.addEventListener("click", function() {
       };
 
     }
-  }
-  else {
+  } else {
     // here I loop through the data and filter a selected color
     for (var i = 0; i < shoes.length; i++) {
       var eachShoeObj = shoes[i]
@@ -74,9 +72,7 @@ myBtn.addEventListener("click", function() {
       };
 
     }
-  }
-
-
+  };
   // here I take info in shoes to data(#each data) handlebars template
   var handleData = handlebars({
     data: shoeStore
@@ -86,3 +82,16 @@ myBtn.addEventListener("click", function() {
   outPut.innerHTML = handleData;
 
 });
+addShoeStockBtn.addEventListener("click", function() {
+  var addStock = shoes.push({
+    brand: document.getElementById("addShoeBrand").value,
+    size: document.getElementById("addShoeSize").value,
+    color: document.getElementById("addShoeColor").value,
+    in_Stock: document.getElementById("addShoeQuantity").value,
+
+  })
+document.getElementById("addShoeBrand").value = ""
+document.getElementById("addShoeSize").value = ""
+document.getElementById("addShoeColor").value = ""
+document.getElementById("addShoeQuantity").value = ""
+})
