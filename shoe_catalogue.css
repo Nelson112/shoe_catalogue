@@ -1,79 +1,23 @@
-body {
-  background-image: url('/home/bootcamp/projects/shoe_catalogue/white-background-stars.jpg');
+body{
+  background-image: url("/home/bootcamp/projects/shoe_restart/background.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
-  color: black;
-}
-@keyframes animatedBackground {
-  from {
-    background-position: 80s% 70;
-  }
-  to {
-    background-position: 100% 0;
-  }
-}
-h1 {
-  color: rgb(68, 51, 44);
-  background: rgba(106, 131, 99, 0.26);
-  font-size: 60px;
-  font-family: 'Libre Baskerville', serif;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  text-shadow: 0 1px 0 #999999, 0 2px 0 #888888, 0 3px 0 #777777, 0 4px 0 #666666, 0 5px 0 #555555, 0 6px 0 #444444, 0 7px 0 #333333, 0 8px 7px rgba(0, 0, 0, 0.4), 0 9px 10px rgba(0, 0, 0, 0.2);
-}
-fieldset {
-  border-radius: 6px;
-}
-h2 {
-  color: rgb(68, 51, 44);
-  background: rgba(106, 131, 99, 0.26);
-  font-size: 60px;
-  font-family: 'Libre Baskerville', serif;
+  background-position: right top;
+  background-attachment: fixed;
   text-align: center;
 }
-h3 {
-  color: rgb(68, 51, 44);
-  background: rgba(106, 131, 99, 0.26);
-  font-size: 20px;
-  font-family: 'Libre Baskerville', serif;
-  text-align: center;
-}
-#checkStock {
-  /*width: 560px;
-	height: 400px;*/
-  background-image: url(/home/bootcamp/projects/shoe_catalogue/allstar.jpg);
-  /*background-position: 0px 0px;*/
-  background-repeat: repeat-x;
-  margin-left: 8em;
-  margin-right: 8em;
-  animation: animatedBackground 5s linear infinite;
-  -ms-animation: animatedBackground 5s linear infinite;
-  -moz-animation: animatedBackground 5s linear infinite;
-  -webkit-animation: animatedBackground 5s linear infinite;
-  display: block;
-}
-table{
+table {
     border-collapse: collapse;
     width: 100%;
-    background-color: rgb(224, 224, 224);
-    text-align: center;
 }
 
 th, td {
     text-align: left;
     padding: 8px;
-    text-transform: capitalize;
 }
 
 tr:nth-child(even){background-color: #f2f2f2}
-/*display: inline-block;
-    background-position: 0px 0px;
-    background-repeat: repeat-x;
-    text-align: center;
-    border-radius: 6px;
-    background-image: url('/home/bootcamp/projects/shoe_catalogue/449395.jpg');*/
 
-
+th {
+    background-color: #4CAF50;
+    color: white;
 }

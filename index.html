@@ -3,13 +3,17 @@
 
 <head>
   <meta charset="utf-8">
-  <title>shoe-catalogue</title>
+  <title>Shoe_Catalogue</title>
   <link rel="stylesheet" href="shoe_catalogue.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
 </head>
+<h1>Shoes for all Walks of life</h1>
+<hr>
+<div class="outPut">
+
+</div>
 
 <body>
-
   <script id="myTemplate" type="text/handlebars-x">
     <h1>Our Stock</h1>
     <table>
@@ -18,6 +22,7 @@
         <th>size</th>
         <th>color</th>
         <th>in_Stock</th>
+        <th>price</th>
       </tr>
       {{#each data}}
       <tr>
@@ -25,52 +30,50 @@
         <td>{{size}}</td>
         <td>{{color}}</td>
         <td>{{in_Stock}}</td>
+        <td>R{{price}}</td>
       </tr>
       {{/each}}
     </table>
   </script>
-  <h1>Shoes <br> For All Walks of Life.</h1>
-  <fieldset>
-    <legend>
-      <h2>Add Stock</h2></legend>
-    <input id=addShoeBrand type="text" name="brand" placeholder="type shoe brand...">
-    <input id=addShoeSize type="text" name="size" placeholder="type shoe size...">
-    <input id=addShoeColor type="text" name="color" placeholder="type shoe color...">
-    <input id=addShoeQuantity type="text" name="in_stock" placeholder="type in Quantity...">
-    <button id=addShoeStockBtn type="button" name="button">Add Stock</button>
-  </fieldset>
-  <fieldset id=checkStock>
-    <legend>
-      <h2>Check Stock</h2></legend>
-    <h3>Size</h3>
-    <select id=sizeDdown>
-      <option value="All">All</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-    </select>
-    <h3>Color</h3>
-    <select id=colorDdown>
-      <option value="All">All</option>
-      <option value="black">Black</option>
-      <option value="white">White</option>
-      <option value="red">red</option>
-      <option value="peach">peach</option>
-    </select>
-    <!-- <button id=myButt type="button" name="button">Search</button> -->
-  </fieldset>
-  <button id=showTable type="button" name="button">Show Stock</button>
-  <div id="outPut">
+<h3>Search by:</h3>
 
-  </div>
+
+    <div class="sizesDdown">
+
+    </div>
+
+<script id="sizeDdownTemp" type="text/handlebars-x">
+<h2>Size:</h2>
+<select class="sizes" >
+{{#each sizes}}
+<option id="sizesOptions">{{size}}</option>
+{{/each}}
+</select>
+</script>
+<div class="colorsDdown">
+
+</div>
+<script id="colorDdownTemp" type="text/handlebars-x">
+<h2>Color:</h2>
+<select class="colors" >
+{{#each colors}}
+<option id="colorsOptions">{{color}}</option>
+{{/each}}
+</select>
+</script>
+</div>
+  <hr>
+  <button id=checkStockBtn type="button" name="stockbtn">Check Stocks</button>
+  <hr>
+  <h2>Add Stock</h2>
+  <input id=addShoeBrand type="text" name="brand" placeholder="type shoe brand...">
+  <input id=addShoeSize type="number" name="size" placeholder="type shoe size...">
+  <input id=addShoeColor type="text" name="color" placeholder="type shoe color...">
+  <input id=addShoeQuantity type="number" name="in_stock" placeholder="type in quantity..."> R
+  <input id=addShoePrice type="number" name="price" placeholder="type in price...">
+  <button id=addStockBtn type="button" name="button">Add Stock</button>
+  <hr>
   <script src="shoe_catalogue.js" charset="utf-8"></script>
-
 </body>
 
 </html>
