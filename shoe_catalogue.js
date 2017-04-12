@@ -7,18 +7,24 @@ var addStockBtn = document.querySelector('#addStockBtn');
 var sizeDdownTemp = document.getElementById("sizeDdownTemp")
 var colorDdownTemp = document.getElementById("colorDdownTemp")
 
-var sizesDdown = document.querySelector(".sizesDdown")
-var colorsDdown = document.querySelector(".colorsDdown")
-
 var combineDdownSize = Handlebars.compile(sizeDdownTemp.innerHTML)
 var combineDdownColor = Handlebars.compile(colorDdownTemp.innerHTML)
 
+var sizesDdown = document.querySelector(".sizesDdown")
+var colorsDdown = document.querySelector(".colorsDdown")
 
+var search = document.querySelector("searchBtn")
 
 var shoes = [{
   brand: "All Star",
   size: '1',
   color: "black",
+  in_Stock: 3,
+  price: "2000"
+}, {
+  brand: "All Star",
+  size: '1',
+  color: "white",
   in_Stock: 3,
   price: "2000"
 }, {
@@ -45,7 +51,7 @@ var addShoeBrand = document.getElementById("addShoeBrand");
 var addShoeSize = document.getElementById("addShoeSize");
 var addShoeColor = document.getElementById("addShoeColor");
 var addShoeQuantity = document.getElementById("addShoeQuantity");
-var addShoeQuantity = document.getElementById('addShoePrice');
+var addShoePrice = document.getElementById('addShoePrice');
 
 
 
@@ -81,4 +87,43 @@ addStockBtn.addEventListener("click", function() {
     addShoeQuantity.value = ""
     addShoePrice.value = ""
   };
+});
+var handleSizes = combineDdownSize({
+  sizes: shoes
+});
+var handleColors = combineDdownColor({
+  colors: shoes
+});
+sizesDdown.innerHTML = handleSizes
+colorsDdown.innerHTML = handleColors
+
+searchBtn.addEventListener("click", function() {
+
+  var shoeSearch = [];
+
+  var sizesDdown = document.querySelector(".sizes")
+  var sizeSelectedIndex = sizesDdown.selectedIndex;
+  var selectedSize = sizesDdown.options[sizeSelectedIndex].value;
+
+  var colorsDdown = document.querySelector(".colors")
+  var colorSelectedIndex = colorsDdown.selectedIndex;
+  var selectedColor = colorsDdown.options[colorSelectedIndex].value;
+
+if ( selectedColor === "All" && selectedSize === "All") {
+  shoeSearch = shoes;
+} else {
+  for (var i = 0; i < shoes.length; i++) {
+    var shoe = shoes[i];
+    var colorMatches = (selectedColor === "All" || selectedColor === shoe.color);
+    var sizeMatches = (selectedSize === "All" || selectedSize === shoe.size);
+    if (colorMatches && sizeMatches) {
+      shoeSearch.push(shoe);
+    }
+  }
+};
+
+  var newSearchedShoe = combineTemp({
+    data: shoeSearch
+  });
+  outPut.innerHTML = newSearchedShoe;
 });

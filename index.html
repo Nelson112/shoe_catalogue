@@ -8,7 +8,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
 </head>
 <h1>Shoes for all Walks of life</h1>
-<hr>
+
 <div class="outPut">
 
 </div>
@@ -35,34 +35,43 @@
       {{/each}}
     </table>
   </script>
-<h3>Search by:</h3>
+  <fieldset>
+    <legend>
+      <h3>Search by:</h3></legend>
 
 
-    <div class="sizesDdown">
 
+    <div class="sizesDdown"> </div>
+    <div class="colorsDdown"> </div>
+
+
+
+    <div class="dropDowns">
+      <script id="sizeDdownTemp" type="text/handlebars-x">
+        <h5>size:</h5>
+        <select class="sizes">
+        <option>All</option>
+          {{#each sizes}}
+          <option id="sizesOptions">{{size}}</option>
+          {{/each}}
+        </select>
+      </script>
+
+      <script id="colorDdownTemp" type="text/handlebars-x">
+        <h5>color:</h5>
+        <select class="colors">
+        <option>All</option>
+          {{#each colors}}
+          <option id="colorsOptions">{{color}}</option>
+          {{/each}}
+        </select>
+      </script>
     </div>
+    </div>
+    <br>
+    <button type="button" id="searchBtn">Search</button>
+  </fieldset>
 
-<script id="sizeDdownTemp" type="text/handlebars-x">
-<h2>Size:</h2>
-<select class="sizes" >
-{{#each sizes}}
-<option id="sizesOptions">{{size}}</option>
-{{/each}}
-</select>
-</script>
-<div class="colorsDdown">
-
-</div>
-<script id="colorDdownTemp" type="text/handlebars-x">
-<h2>Color:</h2>
-<select class="colors" >
-{{#each colors}}
-<option id="colorsOptions">{{color}}</option>
-{{/each}}
-</select>
-</script>
-</div>
-  <hr>
   <button id=checkStockBtn type="button" name="stockbtn">Check Stocks</button>
   <hr>
   <h2>Add Stock</h2>

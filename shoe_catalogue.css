@@ -1,5 +1,5 @@
 body{
-  background-image: url("/home/bootcamp/projects/shoe_restart/background.jpg");
+  background-image: url("/home/bootcamp/projects/shoe_catalogue/white-background-stars.jpg");
   background-repeat: no-repeat;
   background-position: right top;
   background-attachment: fixed;
@@ -15,9 +15,12 @@ th, td {
     padding: 8px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(even){background-color: #dc6f6f}
 
 th {
-    background-color: #4CAF50;
+    background-color: rgba(0, 0, 0, 0.71);
     color: white;
+}
+.dropDowns {
+  display: inline-block;
 }
