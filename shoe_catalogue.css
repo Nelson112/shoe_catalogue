@@ -24,3 +24,6 @@ th {
 .dropDowns {
   display: inline-block;
 }
+.back {
+  background-image: url("/home/bootcamp/projects/shoe_catalogue/allstar.jpg");
+}

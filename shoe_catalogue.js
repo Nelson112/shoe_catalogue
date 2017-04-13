@@ -64,6 +64,10 @@ checkStockBtn.addEventListener("click", function() {
 });
 
 addStockBtn.addEventListener("click", function() {
+
+  var uniqueSizes = [];
+  var sizeDdownVal = [];
+
   if (addShoeBrand.value.length > 0 && addShoeSize.value.length > 0 && addShoeColor.value.length > 0 && addShoeQuantity.value.length > 0 && addShoePrice.value.length > 0) {
     var addStock = shoes.push({
       brand: addShoeBrand.value,
@@ -72,25 +76,42 @@ addStockBtn.addEventListener("click", function() {
       in_Stock: addShoeQuantity.value,
       price: addShoeQuantity.value
     })
+  };
 
     var handleSizes = combineDdownSize({
       sizes: shoes
     });
     var handleColors = combineDdownColor({
       colors: shoes
-    });
+    })for (var i = 0; i < shoes.length; i++) {
+    var shoe = shoes[i];
+    var colorMatches = (selectedColor === "All" || selectedColor === shoe.color);
+    var sizeMatches = (selectedSize === "All" || selectedSize === shoe.size);
+    if (colorMatches && sizeMatches) {
+      shoeSearch.push(shoe);
+    }
     sizesDdown.innerHTML = handleSizes
     colorsDdown.innerHTML = handleColors
+
+
     addShoeBrand.value = ""
     addShoeSize.value = ""
     addShoeColor.value = ""
     addShoeQuantity.value = ""
     addShoePrice.value = ""
-  };
+
+
+
 });
 var handleSizes = combineDdownSize({
+  for (var i = 0; i < shoes.length; i++) {
+  var current =  shoes[i].size;
+  }
+  console.log(current);
   sizes: shoes
 });
+
+
 var handleColors = combineDdownColor({
   colors: shoes
 });
@@ -102,9 +123,13 @@ searchBtn.addEventListener("click", function() {
   var shoeSearch = [];
 
   var sizesDdown = document.querySelector(".sizes")
-  var sizeSelectedIndex = sizesDdown.selectedIndex;
-  var selectedSize = sizesDdown.options[sizeSelectedIndex].value;
-
+  var sizeSelectedIndex = for (var i = 0; i < shoes.length; i++) {
+    var shoe = shoes[i];
+    var colorMatches = (selectedColor === "All" || selectedColor === shoe.color);
+    var sizeMatches = (selectedSize === "All" || selectedSize === shoe.size);
+    if (colorMatches && sizeMatches) {
+      shoeSearch.push(shoe);
+    }
   var colorsDdown = document.querySelector(".colors")
   var colorSelectedIndex = colorsDdown.selectedIndex;
   var selectedColor = colorsDdown.options[colorSelectedIndex].value;
