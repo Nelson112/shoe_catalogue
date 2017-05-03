@@ -1,5 +1,5 @@
 body{
-  background-image: url("/home/bootcamp/projects/shoe_catalogue/white-background-stars.jpg");
+  background-image: url("/shoe_catalogue/allstar.jpg");
   background-repeat: no-repeat;
   background-position: right top;
   background-attachment: fixed;
@@ -24,6 +24,8 @@ th {
 .dropDowns {
   display: inline-block;
 }
-.back {
-  background-image: url("/home/bootcamp/projects/shoe_catalogue/allstar.jpg");
+h1, h2, h3, h4 {
+color: rgb(194, 64, 64);
+background-color: rgb(255, 173, 173);
+text-shadow: rgb(222, 218, 218) 4px 1px 0px;
 }
